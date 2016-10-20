@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>HTML && CSS</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown data-separator="----" data-separator-vertical="--">
+            <script type="text/template">
+                ##### 1.请先下载这些工具：安装过程一路默认就行
+                - 按操作系统位数选择32|64[WampServer](https://sourceforge.net/projects/wampserver/files/WampServer%202/Wampserver%202.5/)
+                - [Sublime Text](https://www.sublimetext.com/3) 或者 [Intellij IDEA Ultimate](https://www.jetbrains.com/idea/download/) 二选一
+                - [Git](https://git-scm.com/downloads)
+
+                ##### 2.在github上注册一个账号
+                ----
+                #### 直接开搞 （了解过html的请飘过）
+
+                - 创建一个HTML文件，比如`train01.html`文件，在里面实现一些代码，完成第一个网页。
+                这个页面中，需要有以下内容：
+
+                1. 一个*一级标题*，内容是你的Github账号
+                1. 一个*无序列表*，包括2个项目，里面每一个项目是一个链接，分别链接到`本PPT地址`以及你的微博（或其他什么网站）
+                1. 一个*二级标题*，内容随意
+                1. 一个*段落*，内容随意
+                1. 一个*图片*
+                ----
+                #### train01 效果示意图
+                ![效果](./images/train01.png)
+                ----
+                #### train01 参考资料
+
+                - [知乎上的一些Web基本概念介绍](http://www.zhihu.com/question/22689579)
+                - [慕课网HTML+CSS基础课程](http://www.imooc.com/learn/9)
+                - [w3school html教程](http://w3school.com.cn/html/index.asp)
+                - [MDN HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Introduction)
+
+                ----
+                #### 给你的网页加点样式
+                - 创建一个`train01.css`的文件，并在`train01.html`中引入它，然后我们对`train01.html`做一些让他变得花哨一点的事情：
+
+                - 让一级标题的文字颜色变成蓝色
+                - 二级标题的文字大小变成`14px`
+                - 段落的文字大小变成`12px`，文字颜色是黄色，带一个黑色的背景色
+                - 图片有一个红色的，`2px`粗的边框
+
+                ----
+                ####train01 效果示意图
+                ![效果](./images/train02.png)
+
+                [源码](./codes/20161022/train01.html)
+
+                ----
+                #### 参考资料
+
+                - [MDN CSS](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started)的1，2，3节
+                - [w3school css](http://w3school.com.cn/css/index.asp)
+                - [慕课网HTML+CSS基础课程](http://www.imooc.com/learn/9)
+
+                ----
+                #### 延伸
+                - 了解一下HTML及CSS的发展史，了解一下HTML4到5究竟变化了什么
+                - 对于HTML及CSS的发展史有一个大概的了解
+                - 明白HTML5和之前的版本大概有什么区别
+
+                #### 参考资料
+
+                - [MDN HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Introduction)
+                - [MDN CSS](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started)
+                - [w3school](http://w3school.com.cn/html5/index.asp)
+                - [W3C: HTML5, Differences from HTML4](http://www.w3.org/TR/html5-diff/)
+
+                ----
+                #### 深入学习HTML、CSS
+                - 盒子模型
+                - 浮动
+                - 相对定位、绝对定位
+                - CSS3
+            </script>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        slideNumber: 'c/t',
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>

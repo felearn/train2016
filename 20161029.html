@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>课前准备</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-separator="----" data-separator-vertical="--">
+                    <script type="text/template">
+## 入门基础技能：
+- [HTML4](http://www.w3.org/TR/html401/cover.html#minitoc)，[HTML5](http://www.w3.org/TR/html5/#contents)语法、标签、语义
+- [CSS2.1](http://www.w3.org/TR/CSS2/#minitoc)，[CSS3](http://www.w3.org/TR/2001/WD-css3-roadmap-20010523/#table)规范，与HTML结合实现各种布局、效果
+- [Ecma-262](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf)定义的javascript的语言核心，原生[客户端javascript](https://developer.mozilla.org/en-US/docs/Web/API)，[DOM操作](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)，[HTML5新增功能](https://developer.mozilla.org/en/docs/web/Guide/HTML/HTML5)
+- 一个成熟的客户端javascript库，推荐[jquery](http://jquery.com/)
+- 一门服务器端语言：PHP || JAVA
+- 版本管理工具：Git
+
+----
+
+## 基本开发工具
+
+个人觉得必备的前端开发工具：
+
+- **文本编辑器**：推荐[Sublime Text](http://www.sublimetext.com/)，支持各种插件、主题、设置，使用方便
+- **浏览器**：推荐[Google Chrome](http://www.google.cn/chrome/?hl=zh-CN&standalone=1)，更新快，对前端各种标准提供了非常好的支持
+- **调试工具**：推荐Chrome自带的[Chrome develop tools](https://developer.chrome.com/devtools)，可以轻松查看DOM结构、样式，通过控制台输出调试信息，调试javascript，查看网络等
+- **辅助工具**：PhotoShop编辑图片、取色，fireworks或[markMan](http://www.getmarkman.com/)量尺寸
+- **翻墙工具**：lantern，只上谷歌的直接改[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts)
+
+----
+
+## 学习方法和学习目标
+
+1. 阅读HTML，CSS，Javascript标准[推荐MDN](https://developer.mozilla.org/en-US/#)全面完善知识点
+2. 阅读前端牛人的博客、文章提升对知识的理解、阅读他人代码
+3. 善用搜索引擎
+4. 在项目中巩固与提升
+
+----
+
+## 继续提高
+
+- [webpack](https://webpack.github.io/) || [fis](http://fis.baidu.com/)：前端自动化工具，提高工作效率
+- [less css](http://lesscss.org/)：优秀的CSS预处理器
+- [bootstrap](http://getbootstrap.com/)：优秀的CSS框架，与less结合使用效果完美，响应式网站首选
+- [Node.js](http://nodejs.org/)：JavaScript也可以做后台
+- And so on ...
+
+----
+
+
+----
+
+### 任务目的
+
+学习GitHub使用，通过最简单的联系来实践多人协作开发
+
+### 任务描述
+
+每个队伍建立一个Github的项目仓库，在这个项目中建立一个自己队伍的介绍网站，网站中需要包括队伍介绍的内容、每个队员介绍的内容。
+
+要求：
+
+- 每个队员都需要有代码提交
+- 尝试进行组内的交叉Code Review，尽量保证队伍内部代码风格一致
+- 要求网站可访问，[参考](https://pages.github.com/)
+
+### 学习材料
+
+- [Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/)
+- [Pages.Github](https://pages.github.com/)
+
+
+------
+                    </script>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
