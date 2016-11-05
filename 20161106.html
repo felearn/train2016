@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>HTML && CSS</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown data-separator="----" data-separator-vertical="--">
+            <script type="text/template">
+                JavaScript由下列3个不同的部分组成：
+
+                - 核心（ECMAScript），由 ECMA-262 定义，提供核心语言功能。
+                - 文档对象模型（DOM），提供访问和操作网页内容的方法和接口。
+                - 浏览器对象模型（BOM），提供与浏览器交互的方法和接口。
+                ----
+                #### 加载
+                使用 script 标签的方式有两种：
+                - 直接在页面中嵌入 JavaScript 代码。
+                - 包含外部 JavaScript 文件。
+                - 从上至下依次解释，解释期间不加载其他内容
+                - 不能在引用外部js的标签段内写javascript代码
+                - script标签建议放在body标签结束之前
+                ----
+                #### 语法
+                - 区分大小写
+                - 注释方法
+                - 标识符 以字母、下划线（`_`）或美元符号（`$`）开始
+                - 关键字和保留字
+                ----
+                #### 变量和数据类型
+                - 变量是松散的，可以用来保存任何类型的数据
+                - var 函数级作用域
+                - 基本数据类型 ，通过`typeof` 运算符判断基本类型
+                `Undefined`、`Null`、`Boolean`、`Number`、`String`
+                - 复杂数据类型
+                `Object`, 由无序的名值对组成
+                ----
+                #### 语法基础
+                - 表达式和运算符 短路运算
+                - 语句
+                条件语句、`switch` 语句、`while` 语句、`do-while` 语句、`for` 语句
+                ----
+                #### 对象和数组
+                ----
+
+                #### 函数
+
+                ----
+                #### BOM和DOM
+                ----
+                #### 事件
+            </script>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        slideNumber: 'c/t',
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
