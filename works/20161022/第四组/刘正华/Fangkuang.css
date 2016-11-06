@@ -1,0 +1,27 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.Rec{
+	margin-left: 700px;
+	margin-top: 300px;
+	background-color: #cdcdcd;
+	width: 500px;
+	height: 250px;
+	-moz-box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 5px #888888;
+}
+.circle-one{
+	width: 100px;
+	height: 100px;
+	background-color: #ffcd00;
+	border-radius: 0 0 100% 0;
+}
+.circle-two{
+	width: 100px;
+	height: 100px;
+	background-color: #ffcd00;
+	margin-top: 50px;
+	margin-left: 400px;
+	border-radius: 100% 0 0 0;
+}

@@ -1,0 +1,84 @@
+body{
+	background-image:url('../image/bg.png');
+	background-size:1000px 1000px;
+}
+.container{
+	width:1000px;
+	height: 630px;
+	border:1px solid;
+	margin:50px auto;
+	background-color:#efefef;
+	background-image:url('../image/')
+}
+.left{
+	margin-top:50px;
+	margin-left:50px;
+	height:155px;
+	width:255px;
+	border:1px solid;
+	position:relative;
+	float:left;
+	background-color:#ffffff;
+
+	
+}
+#html{
+	width:100px;
+	height: 100px;
+	margin-top: 26px;
+	margin-left:26px;
+	background-image:url('../image/html.png');
+	background-size:100px 100px;
+}
+.middle{
+	float:left;
+	width:455px;
+	height:331px;
+	border:1px solid;
+	margin-left:26px;
+	margin-top: 50px;
+	background-color:#ffffff;
+}
+.text{
+	width:400px;
+	height: 262px;
+	margin-left:25px;
+	margin-top:27px;
+	font-family:Microsoft JhengHei;
+}
+.right{
+	float:left;
+	width:152px;
+	height:537px;
+	margin-top:50px;
+	margin-left:25px;
+	background-color:#ffffff;
+	border:1px solid;
+}
+.image ul li{
+
+	list-style-type:none;
+	margin-left:-15px;
+	margin-top:26px; 
+	width:102px;
+	height:102px;
+	border:1px solid;
+	
+
+}
+#css{
+	background-size:102px 102px;
+	background-image:url('../image/css.png');
+}
+#js{
+	background-size:102px 102px;
+	background-image:url('../image/js.png');
+}
+#java-web{
+	background-size:102px 102px;
+	background-image:url('../image/java.png');
+}
+#mysql{
+	background-size:102px 102px;
+	background-image:url('../image/mysql.png');
+}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+.div1
+{
+	height:300px;
+	width:500px;
+	top:300px;
+	background-color:#0F6;
+	position:relative;
+	margin:0 auto;
+}
+.div2
+{
+	height:100px;
+	width:100px;
+	background-color:#000;
+	border-radius:0px 0px 100px 0px;
+}
+.div3
+{
+	height:100px;
+	width:100px;
+	background-color:#000;
+	position:absolute;
+	right:0;
+	bottom:0;
+	border-radius:100px 0px 0px 0px;
+	
+}

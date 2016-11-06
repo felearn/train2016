@@ -1,0 +1,33 @@
+#box{
+    width:600px;
+    height: 400px;
+    line-height: 100px;
+    text-align: center;
+    margin: 100px;
+    background-color: grey;
+    
+}
+
+.up-left{
+    position: relative;
+    width:50px;
+    height: 50px;
+    line-height: 100px;
+    text-align: center;
+    background:red;
+    border-radius:  0 0 50px;
+    
+}
+
+.down-right{
+    position: relative;
+    left: 550px;
+    top: 300px;
+    width:50px;
+    height: 50px;
+    line-height: 100px;
+    text-align: center;
+    background-color: red;
+    border-radius: 50px 0 0;
+    
+}
