@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>HTML && CSS</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown data-separator="----" data-separator-vertical="--">
+            <script type="text/template">
+                # 图解Git
+                ## 安装git
+                ## 使用命令行操作git
+                ## 使用图形界面管理git
+                ----
+                ### Git 项目的三种工作区域/状态
+                - Working Directory(工作目录)
+
+                工作目录是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。
+
+                - Staging Area / index(暂存区域或索引)
+
+
+                暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。
+
+                - .git directory (Repository)(Git 仓库目录)
+
+
+                Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。
+
+                ----
+                #### 文件的四个基本状态
+                - Untracked >未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.
+                - Unmodify >文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为Modified. 如果使用git rm移出版本库, 则成为Untracked文件
+                - Modified >文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过git add可进入暂存staged状态, 使用git checkout 则丢弃修改过, 返回到unmodify状态, 这个git checkout即从库中取出文件, 覆盖当前修改
+                - Staged >暂存状态. 执行git commit则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为Unmodify状态. 执行git reset HEAD filename取消暂存, 文件状态为Modified
+
+                ----
+
+                ### Git 基本工作流程
+                1. 在工作目录中修改文件。
+                2. 暂存文件，将文件的快照放入暂存区域。
+                3. 提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。
+                ![基本工作流](images/git-images/bg2015120901.png)
+                ----
+                ### 基本用法
+
+                ![基本用法](images/git-images/git-refer-basic-usage.png)
+
+                上面的四条命令在工作目录、暂存目录(也叫做索引)和仓库之间复制文件。
+
+
+                ----
+                绿色的5位字符表示提交的ID，分别指向父节点。分支用橘色显示，分别指向特定的提交。当前分支由附在其上的HEAD标识。 ed489是最新提交。
+                ![会话](images/git-images/git-refer-conventions.png)
+
+                ----
+
+                #### [Diff](#diff)
+
+                查看两次提交之间的变动。
+
+                ![差异比较](images/git-images/git-refer-diff.png)
+
+                ----
+
+                #### [Commit](#commit)
+
+                提交时，git用暂存区域的文件创建一个新的提交，并把此时的节点设为父节点。然后把当前分支指向新的提交节点。
+
+                ![提交主干](images/git-images/git-refer-commit-master.png)
+                ----
+
+                当前分支是某次提交的祖父节点，提交后，maint分支1800b就不再是master分支的祖父节点。
+
+                ![提交分支](images/git-images/git-refer-commit-maint.png)
+
+                ----
+
+                如果想更改提交，使用 git commit - -amend。使用与当前提交相同的父节点进行一次新提交，旧的提交会被取消。
+
+                ![更改提交](images/git-images/git-refer-commit-amend.png)
+
+                ----
+
+                #### [Checkout](#checkout)
+
+                checkout命令通常用来从仓库中取出文件，或者在分支中切换。
+
+                checkout命令让git把文件复制到工作目录和暂存区域。
+                ----
+                比如git checkout HEAD~ foo.c把文件从foo.c提交节点HEAD~ (当前提交节点的父节点)复制到工作目录并且生成索引。注意当前分支没有变化。
+
+                ![检出HEAD](images/git-images/git-refer-checkout-files.png)
+                ----
+
+                如果没有指定文件名，而是一个本地分支，那么将切换到那个分支去。同时把索引和工作目录切换到那个分支对应的状态。
+
+                ![检出分支](images/git-images/git-refer-checkout-branch.png)
+                ----
+                #### [Reset](#reset)
+
+                reset命令把当前分支指向另一个位置，并且有选择的变动工作目录和索引。也用来在从历史仓库中复制文件到索引，而不动工作目录。
+                ----
+
+                如果不给选项，那么当前分支指向到那个提交。如果用- -hard选项，那么工作目录也更新，如果用 - -soft选项，那么都不变。
+
+                ![回滚到某版本](images/git-images/git-refer-reset-commit.png)
+                ----
+                如果没有给出提交点的版本号，那么默认用HEAD。这样，分支指向不变，但是索引会回滚到最后一次提交，如果用- -hard选项，工作目录也同样。
+
+                ![默认回滚](images/git-images/git-refer-reset.png)
+                ----
+                ### [Merge](#merge)
+
+                merge 命令把不同分支合并起来
+
+                ![合并](images/git-images/git-refer-merge-ff.png)
+                ----
+                把当前提交(ed489 如下所示)和另一个提交(33104)以及他们的共同祖父节点(b325c)进行一次[三方合并](http://en.wikipedia.org/wiki/Three-way_merge)。结果是先保存当前目录和索引，然后和父节点33104一起做一次新提交。
+
+                ![三方合并](images/git-images/git-refer-merge.png)
+
+                ----
+
+                #### Git 改变文件工作区域的命令图解
+                ![Git 改变文件工作区域的命令图解](https://cloud.githubusercontent.com/assets/423045/9424714/f6d728ba-4928-11e5-8899-c179d74ddcb3.png)
+
+            </script>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        slideNumber: 'c/t',
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
