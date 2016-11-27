@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>后端基础</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown data-separator="----" data-separator-vertical="--">
+            <script type="text/template">
+                ### PHP
+                ### SQL
+                ### CI框架
+                ----
+                - Static Web 静态网站
+                ( Client Side Code :  HTML / CSS / JavaScript)
+                - Dynamic Web 动态网站- 不是用 FLASH 就是动态!
+                ( Server Side Code :  PHP, Python, RoR, Node.js, JSP)
+                ----
+
+                1. URL指向一个服务器上的一个HTML文件，如：https://felearn.github.io/train2016/index.html
+                2. 浏览器直接访问Server上的HTML文件，Server把这个文件内容直接给到浏览器，浏览器对HTML内容进行解析、显示
+                3. 因为HTML文件内容是不会变化的（除非你修改它），所以每次请求获得的内容都是相同的
+                4. 这种页面叫做静态页面。它无法保存数据，也无法处理数据，只能简单显示。
+                ----
+                ![基本用法](images/php/static.png)
+                ----
+                1. 浏览器如果请求服务器上的`.html`文件，服务器只会把该文件的内容直接发送到浏览器中
+                2. 浏览器如果请求服务器上的`.php`文件，服务器会
+                1. 读取该php文件，解析其中的代码
+                2. 按照php语言规则执行内部的代码
+                3. 把php脚本的执行结果（通常是一个HTML文本）返回给浏览器
+                ----
+                ![基本用法](images/php/dynamic.png)
+                ----
+                #### 基本语法
+
+                <code data-trim>
+
+                    //PHP脚本出现在<?php 和 ?> 标签之间
+                    <?php
+                        echo "这里是PHP代码";
+                    ?>
+                    //要在php.ini中开启，设置short_open_tag = On
+                    <?
+                        echo "这里是PHP代码";
+                    ?>
+
+                </code>
+
+                ----
+                #### 与静态页面结合
+
+                <code data-trim>
+
+                    //test.php
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Second PHP</title>
+                    </head>
+                    <body>
+                    <?php $color='red'; ?>
+                    <h1>PHP is Rock</h1>
+                    <h1 style="color:<?php echo $color;?>">PHP is Rock</h1>
+                    </body>
+                    </html>
+
+                </code>
+                ----
+                ### 学习资料
+                - [学习笔记](https://github.com/ZouStrong/PHP)
+                - [七天学会PHP](http://www.kancloud.cn/phpxy/phpbook/33183)
+                - [慕课网教程](http://www.imooc.com/course/list?c=php)
+                ----
+                #### mysql基础
+                - 数据类型[link](https://github.com/linuxcer/Blog-and-Exercises/blob/master/BLOG/Mysql%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md)
+                - 21分钟学会使用[link](https://github.com/jaywcjlove/mysql-tutorial/blob/master/21-minutes-MySQL-basic-entry.md)
+                ----
+                #### CI框架
+                ----
+                - ***模型*** 代表你的数据结构。通常来说，模型类将包含帮助你对数据库进行增删改查的方法。
+                - ***视图*** 是要展现给用户的信息。一个视图通常就是一个网页，也可以是一部分页面（例如页头、页尾）。
+                - ***控制器*** 是模型、视图以及其他任何处理 HTTP 请求所必须的资源之间的中介，并生成网页。
+                ![什么是mvc](images/php/what-is-mvc-2.jpg)
+                ----
+                ### 演示
+            </script>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        slideNumber: 'c/t',
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
